@@ -19,7 +19,7 @@
 			Valor:<br/>
 			<input name="valor" type="text"><br/>
 			
-			Tipo:
+			Tipo:<br/>
 			<select name="tipo">
 				<option value="ENTRADA">Entrada</option>
 				<option value="SAIDA">Saída</option>

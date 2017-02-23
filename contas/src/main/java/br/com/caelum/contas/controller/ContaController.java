@@ -45,4 +45,22 @@ public class ContaController {
 		return "redirect:listaContas";
 	}
 	
+	@RequestMapping("/mostraConta")
+	public String mostrar(Long id, Model model) {
+		ContaDAO contaDAO = new ContaDAO();
+		
+		model.addAttribute("conta", contaDAO.buscaPorId(id));
+		
+		return "conta/mostra";
+	}
+	
+	@RequestMapping("/alteraConta")
+	public String alterar(Conta conta) {
+		ContaDAO contaDAO = new ContaDAO();
+		
+		contaDAO.altera(conta);
+		
+		return "redirect:listaContas";
+	}
+	
 }
