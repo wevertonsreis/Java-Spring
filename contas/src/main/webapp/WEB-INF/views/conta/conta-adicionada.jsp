@@ -8,5 +8,10 @@
 </head>
 <body>
 	Conta adicionada
+	
+	<br>
+	<a href="form">Adicionar nova conta</a>
+	<br>
+	<a href="listaContas">Ir para lista de contas</a>
 </body>
 </html>
