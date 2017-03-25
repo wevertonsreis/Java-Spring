@@ -5,17 +5,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.caelum.contas.ConnectionFactory;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import br.com.caelum.contas.modelo.Usuario;
 
+@Repository
 public class UsuarioDAO {
+	
 	private Connection connection;
 
-	public UsuarioDAO() {
+	@Autowired
+	public UsuarioDAO(DataSource dataSource) {
 		try {
-			connection = new ConnectionFactory().getConnection();
+			connection = dataSource.getConnection();
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new RuntimeException("Falha ao obter conexao!",e);
 		}
 	}
 

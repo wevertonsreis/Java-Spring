@@ -70,5 +70,7 @@
 	</table>
 	<br>
 	<a href="form">Adicionar nova conta</a>
+	<br>
+	<a href="logout">Sair</a>
 </body>
 </html>
