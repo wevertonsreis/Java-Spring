@@ -1,4 +1,6 @@
-.git
-.metadata
+*.git
+*.metadata
 /RemoteSystemsTempFiles
 /Servers
+*.tern-project
+*.settings
