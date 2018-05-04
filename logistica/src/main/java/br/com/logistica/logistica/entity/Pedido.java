@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -15,12 +13,8 @@ public class Pedido extends GenericEntity {
 	@ManyToOne
 	private Cliente cliente;
 	@OneToMany
+	@JoinColumn(name = "pedido_id", referencedColumnName = "id")
 	private List<Item> itens;
-	@ManyToMany
-	@JoinTable(name = "pedido_localizacao", 
-		joinColumns = { @JoinColumn(name = "pedido_id") }, 
-		inverseJoinColumns = { @JoinColumn(name = "localizacao_id") })
-	private List<Localizacao> localizacoes;
 
 	public Cliente getCliente() {
 		return cliente;
