@@ -16,11 +16,11 @@ import br.com.logistica.logistica.repository.PropriedadeRepository;
 public class PropriedadeController {
 	
 	@Autowired
-	private PropriedadeRepository  repository;
+	private PropriedadeRepository  propriedadeRepository;
 	
 	@RequestMapping(value = "/find/{filtro}", method = RequestMethod.GET)
 	public List<Propriedade> findByFiltro(@PathVariable("filtro") String filtro) {
-		return repository.findByFiltro(filtro);
+		return propriedadeRepository.findByFiltro(filtro);
 	}
 	
 }
