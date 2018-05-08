@@ -49,9 +49,26 @@ public class ClienteController {
 			return new ModelAndView(CLIENTE_URI + "form","formErrors",result.getAllErrors()); 
 			
 		cliente = this.clienteRepository.save(cliente);
-		redirect.addFlashAttribute("globalMessage","Cliente gravado com sucesso");
+		redirect.addFlashAttribute("globalMessage", "Cliente gravado com sucesso");
 		
 		return new ModelAndView("redirect:/" + CLIENTE_URI +"{cliente.id}", "cliente.id", cliente.getId());	
+	}
+	
+	@GetMapping("alterar/{id}")
+	public ModelAndView alterarForm(@PathVariable("id") Cliente cliente) {
+		return new ModelAndView(CLIENTE_URI + "form", "cliente", cliente);
+	}
+	
+	@GetMapping("remover/{id}")
+	public ModelAndView remover(@PathVariable("id") Long id, RedirectAttributes redirect) {
+		this.clienteRepository.deleteById(id);
+		
+		List<Cliente> clientes = this.clienteRepository.findAll();
+		
+		ModelAndView mv = new ModelAndView(CLIENTE_URI + "list", "clientes", clientes);
+		mv.addObject("globalMessage", "Cliente removido com sucesso");
+		
+		return mv;
 	}
 	
 }

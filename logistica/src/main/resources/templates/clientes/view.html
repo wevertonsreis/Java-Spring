@@ -4,21 +4,23 @@
 	layout:decorate="~{layout}">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<title>Cliente</title>
 </head>
 
 <body>
 	
 	<h1 layout:fragment="header">Cliente</h1>
+	
 	<div layout:fragment="content" class="well">
 		
+		<div class="alert alert-success" th:if="${globalMessage}" th:text="${globalMessage}">mensagem</div>
+			
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>ID</th>
 					<th>Nome</th>
-					<th>EndereÃ§o</th>
+					<th>Endereço</th>
 				</tr>
 			</thead>
 			<tbody>

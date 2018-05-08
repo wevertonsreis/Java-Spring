@@ -3,18 +3,19 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
 	layout:decorate="~{layout}">
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-</head>
+<head></head>
+
 <body>
 
-	<h1 layout:fragment="header">Logistica<small>Painel de controle</small></h1>
+	<h1 layout:fragment="header">Logistica<small class="text-muted">Painel de controle</small></h1>
 	
-	<div layout:fragment="content" class="container">
+	<div layout:fragment="content">
+	
 		<div class="jumbotron">
 			<a th:href="@{/ambiente/}" class="btn btn-lg btn-info">Ambiente</a>
 			<a th:href="@{/h2}" class="btn btn-lg btn-info">H2 Console</a>
 		</div>
+		
 	</div>
 	
 </body>
